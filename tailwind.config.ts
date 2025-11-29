@@ -47,15 +47,22 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+        cyan: {
+          DEFAULT: "hsl(var(--cyan))",
+          400: "#00D9FF",
+        },
+        magenta: {
+          DEFAULT: "hsl(var(--magenta))",
+          500: "#FF006E",
+        },
+        purple: {
+          DEFAULT: "hsl(var(--purple))",
+          500: "#7B2CBF",
+        },
+        gray: {
+          light: "hsl(var(--gray-light))",
+          medium: "hsl(var(--gray-medium))",
+          dark: "hsl(var(--gray-dark))",
         },
       },
       borderRadius: {
@@ -84,6 +91,8 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "float": "float 6s ease-in-out infinite",
+        "particle-float": "particle-float 20s ease-in-out infinite",
       },
     },
   },
