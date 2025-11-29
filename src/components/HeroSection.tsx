@@ -4,7 +4,7 @@ type Language = "es" | "en";
 const content = {
   es: {
     headline: "Asesoría privada en Bitcoin, cryptomonedas y finanzas descentralizadas",
-    subheadline: "Acompañamos a empresarios, profesionales e inversores en la adopción segura y rentable de Bitcoin y DeFi, con absoluta discreción y metodología institucional.",
+    subheadline: "Acompañamos a empresarios, profesionales e inversores en la adopción segura y de Bitcoin, cryptomonedas y finanzas descentralizadas, con absoluta discreción y profesionalismo",
     cta: "Solicitar contacto privado"
   },
   en: {
