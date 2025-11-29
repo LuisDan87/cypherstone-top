@@ -5,12 +5,12 @@ const content = {
   es: {
     headline: "Asesoría privada en Bitcoin, cryptomonedas y finanzas descentralizadas",
     subheadline: "Acompañamos a empresarios, profesionales e inversores en la adopción segura  de Bitcoin, cryptomonedas y finanzas descentralizadas, con absoluta discreción y profesionalismo",
-    cta: "Solicitar contacto privado"
+    cta: "Agendar consulta confidencial"
   },
   en: {
     headline: "Bitcoin, Crypto & Decentralized Finance Advisory",
     subheadline: "We guide entrepreneurs, professionals and investors in the secure and profitable adoption of Bitcoin, Cryptocurrency and DeFi, with absolute discretion and institutional methodology.",
-    cta: "Request private contact"
+    cta: "Schedule confidential consultation"
   }
 };
 export function HeroSection({
@@ -37,7 +37,7 @@ export function HeroSection({
       <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
         {/* Logo */}
         <div className="mb-16 animate-fade-in">
-          <img src={logoImage} alt="CYPHERSTONE" className="h-20 md:h-28 lg:h-32 mx-auto" />
+          <img src={logoImage} alt="CYPHERSTONE" className="h-32 md:h-44 lg:h-56 mx-auto" />
         </div>
 
         {/* Headline */}
