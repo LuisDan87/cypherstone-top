@@ -80,7 +80,7 @@ All colors MUST be HSL.
   }
 
   .glass-button:hover {
-    @apply shadow-[0_0_30px_rgba(0,217,255,0.3)] translate-y-[-2px];
+    @apply shadow-[0_0_20px_rgba(0,217,255,0.15)] translate-y-[-2px];
   }
 
   .gradient-text {

@@ -1,5 +1,6 @@
 import { Lock, Send, MessageCircle, Mail } from "lucide-react";
 import { useState } from "react";
+import { useInView } from "@/hooks/useInView";
 
 type Language = "es" | "en";
 
@@ -51,6 +52,7 @@ export function ContactSection({ lang }: { lang: Language }) {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const { ref, isInView } = useInView();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -73,7 +75,13 @@ export function ContactSection({ lang }: { lang: Language }) {
   };
 
   return (
-    <section id="contact" className="relative py-32 px-6">
+    <section 
+      id="contact" 
+      ref={ref}
+      className={`relative py-32 px-6 transition-all duration-700 ${
+        isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+    >
       <div className="max-w-4xl mx-auto">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-sm font-semibold tracking-[0.3em] uppercase text-cyan-400">

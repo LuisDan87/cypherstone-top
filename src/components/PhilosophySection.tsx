@@ -1,4 +1,5 @@
 import { Shield } from "lucide-react";
+import { useInView } from "@/hooks/useInView";
 
 type Language = "es" | "en";
 
@@ -17,9 +18,15 @@ const content = {
 
 export function PhilosophySection({ lang }: { lang: Language }) {
   const text = content[lang];
+  const { ref, isInView } = useInView();
 
   return (
-    <section className="relative py-32 px-6 border-t border-b border-cyan-400/20">
+    <section 
+      ref={ref}
+      className={`relative py-32 px-6 border-t border-b border-cyan-400/20 transition-all duration-700 ${
+        isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+    >
       <div className="max-w-4xl mx-auto">
         <div className="flex items-start gap-6">
           <div className="hidden md:block mt-2">
@@ -45,6 +52,9 @@ export function PhilosophySection({ lang }: { lang: Language }) {
           </div>
         </div>
       </div>
+
+      {/* Section separator */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent" />
     </section>
   );
 }

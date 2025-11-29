@@ -67,5 +67,8 @@ export function HeroSection({
           <div className="w-1 h-2 bg-cyan-400 rounded-full" />
         </div>
       </div>
+
+      {/* Section separator */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent" />
     </section>;
 }

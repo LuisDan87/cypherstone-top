@@ -1,4 +1,5 @@
 import { Shield, TrendingUp, Settings, Trees } from "lucide-react";
+import { useInView } from "@/hooks/useInView";
 
 type Language = "es" | "en";
 
@@ -65,9 +66,15 @@ const content = {
 
 export function PillarsSection({ lang }: { lang: Language }) {
   const text = content[lang];
+  const { ref, isInView } = useInView();
 
   return (
-    <section className="relative py-32 px-6">
+    <section 
+      ref={ref}
+      className={`relative py-32 px-6 transition-all duration-700 ${
+        isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+    >
       <div className="max-w-6xl mx-auto">
         <h2 className="text-sm font-semibold tracking-[0.3em] uppercase text-cyan-400 text-center mb-16">
           {text.title}
@@ -79,9 +86,11 @@ export function PillarsSection({ lang }: { lang: Language }) {
             return (
               <div
                 key={index}
-                className="glass-card p-12 group hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_0_40px_rgba(0,217,255,0.2)]"
+                className={`glass-card p-12 group hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_0_25px_rgba(0,217,255,0.1)] ${
+                  isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
                 style={{
-                  animationDelay: `${index * 0.1}s`,
+                  transitionDelay: isInView ? `${index * 150}ms` : '0ms',
                 }}
               >
                 <div className="mb-6">
@@ -104,6 +113,9 @@ export function PillarsSection({ lang }: { lang: Language }) {
           })}
         </div>
       </div>
+
+      {/* Section separator */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent" />
     </section>
   );
 }

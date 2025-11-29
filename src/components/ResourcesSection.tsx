@@ -1,5 +1,6 @@
 import { FileCheck, Download } from "lucide-react";
 import { useState } from "react";
+import { useInView } from "@/hooks/useInView";
 
 type Language = "es" | "en";
 
@@ -24,6 +25,7 @@ export function ResourcesSection({ lang }: { lang: Language }) {
   const text = content[lang];
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const { ref, isInView } = useInView();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -39,7 +41,12 @@ export function ResourcesSection({ lang }: { lang: Language }) {
   };
 
   return (
-    <section className="relative py-32 px-6">
+    <section 
+      ref={ref}
+      className={`relative py-32 px-6 transition-all duration-700 ${
+        isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+    >
       <div className="max-w-3xl mx-auto">
         <div className="glass-card p-12 relative overflow-hidden border-2 border-transparent bg-gradient-to-br from-cyan-400/10 via-purple-500/10 to-magenta-500/10">
           {/* Decorative icon */}
@@ -78,6 +85,9 @@ export function ResourcesSection({ lang }: { lang: Language }) {
           </div>
         </div>
       </div>
+
+      {/* Section separator */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent" />
     </section>
   );
 }
