@@ -1,4 +1,5 @@
 import { ExternalLink, Plus } from "lucide-react";
+import cybermassiveLogo from "@/assets/cybermassive_logo-3.svg";
 
 type Language = "es" | "en";
 
@@ -46,9 +47,11 @@ export function PartnersSection({ lang }: { lang: Language }) {
             className="glass-card p-12 group hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_0_40px_rgba(0,217,255,0.2)] cursor-pointer"
           >
             <div className="flex flex-col items-center text-center space-y-6">
-              <div className="text-3xl font-bold gradient-text tracking-wide">
-                CYBERMASSIVE
-              </div>
+              <img 
+                src={cybermassiveLogo} 
+                alt="CYBERMASSIVE" 
+                className="h-12 w-auto"
+              />
 
               <p className="text-base text-gray-medium leading-relaxed">
                 {text.cybermassive.description}
