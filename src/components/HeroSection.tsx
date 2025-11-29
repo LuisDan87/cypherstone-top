@@ -45,7 +45,7 @@ export function HeroSection({ lang }: { lang: Language }) {
         </div>
 
         {/* Headline */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white glow-cyan animate-fade-in" style={{ animationDelay: "0.2s" }}>
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white animate-fade-in" style={{ animationDelay: "0.2s" }}>
           {text.headline}
         </h1>
 
