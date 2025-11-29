@@ -1,12 +1,29 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { ParticleBackground } from "@/components/ParticleBackground";
+import { LanguageSwitcher, LanguageToggle } from "@/components/LanguageSwitcher";
+import { HeroSection } from "@/components/HeroSection";
+import { PhilosophySection } from "@/components/PhilosophySection";
+import { PillarsSection } from "@/components/PillarsSection";
+import { PartnersSection } from "@/components/PartnersSection";
+import { ResourcesSection } from "@/components/ResourcesSection";
+import { ContactSection } from "@/components/ContactSection";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
+  const { lang, toggleLang } = LanguageSwitcher();
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="relative min-h-screen bg-black text-white">
+      <ParticleBackground />
+      
+      <LanguageToggle lang={lang} onToggle={toggleLang} />
+
+      <HeroSection lang={lang} />
+      <PhilosophySection lang={lang} />
+      <PillarsSection lang={lang} />
+      <PartnersSection lang={lang} />
+      <ResourcesSection lang={lang} />
+      <ContactSection lang={lang} />
+      <Footer lang={lang} />
     </div>
   );
 };
