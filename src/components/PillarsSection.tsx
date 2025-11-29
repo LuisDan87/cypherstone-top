@@ -39,7 +39,7 @@ const content = {
         icon: Shield,
         title: "Secure Custody",
         description:
-          "Secure Custody: hardware wallet, Yubikey, TOTP, password manager and physical/legal backup of seed phrases",
+          "Secure Custody: hardware wallet, Yubikey, TOTP, password manager and physical backup of seed phrases",
       },
       {
         icon: TrendingUp,
