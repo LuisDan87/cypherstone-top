@@ -5,11 +5,13 @@ type Language = "es" | "en";
 const content = {
   es: {
     title: "Nuestra Filosofía",
-    text: "El mundo descentralizado puede resultar complejo, arriesgado y abrumador: el exceso de información contradictoria dificulta tomar decisiones seguras. Nuestra experiencia permite a empresarios e inversores acceder a Bitcoin y DeFi con claridad, seguridad y control total sobre sus activos.\n\nEn Cypherstone actuamos como su guía de confianza: evacuamos todas sus dudas, filtramos el ruido informativo y le mostramos el camino más seguro y simple según su perfil. Enseñamos autocustodia segura con hardware wallets, configuramos capas múltiples de autenticación, establecemos respaldos físicos de accesos, y diseñamos protocolos personalizados para cada cliente. Todo bajo confidencialidad absoluta: sus estrategias, operaciones e información patrimonial permanecen privadas",
+    text1: "El mundo descentralizado puede resultar complejo, arriesgado y abrumador: el exceso de información contradictoria dificulta tomar decisiones seguras. Nuestra experiencia permite a empresarios e inversores acceder a Bitcoin y DeFi con claridad, seguridad y control total sobre sus activos.",
+    text2: "En Cypherstone actuamos como su guía de confianza: evacuamos todas sus dudas, filtramos el ruido informativo y le mostramos el camino más seguro y simple según su perfil. Enseñamos autocustodia segura con hardware wallets, configuramos capas múltiples de autenticación, establecemos respaldos físicos de accesos, y diseñamos protocolos personalizados para cada cliente. Todo bajo confidencialidad absoluta: sus estrategias, operaciones e información patrimonial permanecen privadas",
   },
   en: {
     title: "Our Philosophy",
-    text: "The cryptocurrency ecosystem can be complex and risky. Our purpose is to simplify access to Bitcoin and DeFi through clear knowledge, institutional-grade security protocols and complete confidentiality.",
+    text1: "The cryptocurrency ecosystem can be complex and risky. Our purpose is to simplify access to Bitcoin and DeFi through clear knowledge, institutional-grade security protocols and complete confidentiality.",
+    text2: "",
   },
 };
 
@@ -29,9 +31,17 @@ export function PhilosophySection({ lang }: { lang: Language }) {
               {text.title}
             </h2>
             
-            <p className="text-xl md:text-2xl font-normal text-gray-light leading-relaxed">
-              {text.text}
-            </p>
+            <div className="space-y-6">
+              <p className="text-xl md:text-2xl font-normal text-gray-light leading-relaxed">
+                {text.text1}
+              </p>
+              
+              {text.text2 && (
+                <p className="text-xl md:text-2xl font-normal text-gray-light leading-relaxed">
+                  {text.text2}
+                </p>
+              )}
+            </div>
           </div>
         </div>
       </div>
