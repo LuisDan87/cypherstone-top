@@ -10,8 +10,8 @@ const content = {
   },
   en: {
     title: "Our Philosophy",
-    text1: "The cryptocurrency ecosystem can be complex and risky. Our purpose is to simplify access to Bitcoin and DeFi through clear knowledge, institutional-grade security protocols and complete confidentiality.",
-    text2: "",
+    text1: "The decentralized world can be overwhelming: contradictory information, hidden risks and complex decisions for those taking their first steps. Our experience enables entrepreneurs and investors to access Bitcoin and DeFi with clarity, security and total control.",
+    text2: "Cypherstone is your trusted guide: we clarify your doubts, filter the noise and chart the safest path according to your profile. We teach self-custody with hardware wallets, configure multi-layer authentication, establish physical access backups, and design personalized protocols. All under absolute confidentiality: your strategies and wealth information remain private.",
   },
 };
 
