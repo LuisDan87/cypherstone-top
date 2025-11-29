@@ -48,11 +48,7 @@ export function HeroSection({
         </h1>
 
         {/* Subheadline */}
-        <p className="text-lg md:text-xl lg:text-2xl font-light text-gray-light leading-relaxed max-w-3xl mx-auto animate-fade-in" style={{
-        animationDelay: "0.4s"
-      }}>
-          {text.subheadline}
-        </p>
+        
 
         {/* CTA Button */}
         <div className="pt-6 animate-fade-in" style={{
