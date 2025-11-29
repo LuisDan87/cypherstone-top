@@ -10,7 +10,7 @@ const content = {
         icon: Shield,
         title: "Custodia Segura",
         description:
-          "Custodia segura: hardware wallet, Yubikey, TOTP, password manager y resguardo físico/legal de seed phrases",
+          "Custodia segura: hardware wallet, Yubikey, TOTP, password manager y resguardo físico de seed phrases",
       },
       {
         icon: TrendingUp,
