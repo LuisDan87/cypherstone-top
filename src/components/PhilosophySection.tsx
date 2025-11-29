@@ -5,7 +5,7 @@ type Language = "es" | "en";
 const content = {
   es: {
     title: "Nuestra Filosofía",
-    text: "El ecosistema cripto puede resultar complejo y arriesgado. Nuestro propósito es simplificar el acceso a Bitcoin y DeFi mediante conocimiento claro, protocolos de seguridad de grado institucional y total confidencialidad.",
+    text: "El mundo descentralizado puede resultar complejo, arriesgado y abrumador: el exceso de información contradictoria dificulta tomar decisiones seguras. Nuestra experiencia permite a empresarios e inversores acceder a Bitcoin y DeFi con claridad, seguridad y control total sobre sus activos.\n\nEn Cypherstone actuamos como su guía de confianza: evacuamos todas sus dudas, filtramos el ruido informativo y le mostramos el camino más seguro y simple según su perfil. Enseñamos autocustodia segura con hardware wallets, configuramos capas múltiples de autenticación, establecemos respaldos físicos de accesos, y diseñamos protocolos personalizados para cada cliente. Todo bajo confidencialidad absoluta: sus estrategias, operaciones e información patrimonial permanecen privadas",
   },
   en: {
     title: "Our Philosophy",
