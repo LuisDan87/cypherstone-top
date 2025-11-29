@@ -37,7 +37,7 @@ export function HeroSection({
       <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
         {/* Logo */}
         <div className="mb-16 animate-fade-in">
-          <img src={logoImage} alt="CYPHERSTONE" className="h-24 md:h-32 lg:h-36 mx-auto" />
+          <img src={logoImage} alt="CYPHERSTONE" className="h-20 md:h-28 lg:h-32 mx-auto" />
         </div>
 
         {/* Headline */}
