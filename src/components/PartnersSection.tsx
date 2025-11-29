@@ -58,7 +58,7 @@ export function PartnersSection({ lang }: { lang: Language }) {
               <img 
                 src={cybermassiveLogo} 
                 alt="CYBERMASSIVE" 
-                className="h-20 md:h-24 w-auto"
+                className="h-30 md:h-36 w-auto"
               />
 
               <p className="text-base text-gray-medium leading-relaxed">
