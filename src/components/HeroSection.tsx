@@ -24,7 +24,7 @@ export function HeroSection({
       behavior: "smooth"
     });
   };
-  return <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
+  return <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
       {/* Radial gradient overlay */}
       <div className="absolute inset-0 bg-gradient-radial from-cyan-500/5 via-transparent to-transparent" />
       
