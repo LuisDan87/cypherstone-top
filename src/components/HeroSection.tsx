@@ -36,11 +36,11 @@ export function HeroSection({ lang }: { lang: Language }) {
       
       <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
         {/* Logo */}
-        <div className="mb-12 animate-fade-in">
+        <div className="mb-16 animate-fade-in">
           <img
             src={logoImage}
             alt="CYPHERSTONE"
-            className="h-16 md:h-20 mx-auto"
+            className="h-24 md:h-32 lg:h-36 mx-auto"
           />
         </div>
 
