@@ -1,7 +1,8 @@
 import { MeshBackground } from "@/components/MeshBackground";
-import { LanguageSwitcher, LanguageToggle } from "@/components/LanguageSwitcher";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
-import { PhilosophySection } from "@/components/PhilosophySection";
+import { ServicesSection } from "@/components/ServicesSection";
 import { PillarsSection } from "@/components/PillarsSection";
 import { PartnersSection } from "@/components/PartnersSection";
 import { ResourcesSection } from "@/components/ResourcesSection";
@@ -15,15 +16,17 @@ const Index = () => {
     <div className="relative min-h-screen bg-black text-white">
       <MeshBackground />
       
-      <LanguageToggle lang={lang} onToggle={toggleLang} />
+      <div className="relative z-10">
+        <Header lang={lang} onToggleLang={toggleLang} />
 
-      <HeroSection lang={lang} />
-      <PhilosophySection lang={lang} />
-      <PillarsSection lang={lang} />
-      <PartnersSection lang={lang} />
-      <ResourcesSection lang={lang} />
-      <ContactSection lang={lang} />
-      <Footer lang={lang} />
+        <HeroSection lang={lang} />
+        <ServicesSection lang={lang} />
+        <PillarsSection lang={lang} />
+        <PartnersSection lang={lang} />
+        <ResourcesSection lang={lang} />
+        <ContactSection lang={lang} />
+        <Footer lang={lang} />
+      </div>
     </div>
   );
 };
