@@ -7,12 +7,14 @@ const content = {
     subheadline:
       "Acompañamos a empresarios, profesionales e inversores en la adopción segura  de Bitcoin, cryptomonedas y finanzas descentralizadas, con absoluta discreción y profesionalismo",
     cta: "Agendar consulta confidencial",
+    credibility: "Protegiendo patrimonio desde 2011",
   },
   en: {
     headline: "Bitcoin, Crypto & Decentralized Finance Advisory",
     subheadline:
       "We guide entrepreneurs, professionals and investors in the secure and profitable adoption of Bitcoin, Cryptocurrency and DeFi, with absolute discretion and institutional methodology.",
     cta: "Schedule confidential consultation",
+    credibility: "Protecting wealth since 2011",
   },
 };
 export function HeroSection({ lang }: { lang: Language }) {
@@ -52,7 +54,16 @@ export function HeroSection({ lang }: { lang: Language }) {
           {text.headline}
         </h1>
 
-        {/* Subheadline */}
+        {/* Credibility Statement */}
+        <p
+          className="text-sm italic font-normal text-center text-muted-foreground animate-fade-in"
+          style={{
+            letterSpacing: "1.5px",
+            animationDelay: "0.4s",
+          }}
+        >
+          {text.credibility}
+        </p>
 
         {/* CTA Button */}
         <div
