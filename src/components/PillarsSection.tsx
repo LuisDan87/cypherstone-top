@@ -5,7 +5,7 @@ type Language = "es" | "en";
 
 const content = {
   es: {
-    title: "Pilares del Asesoramiento",
+    title: "Nuestra Metodología",
     pillars: [
       {
         icon: Shield,
@@ -34,7 +34,7 @@ const content = {
     ],
   },
   en: {
-    title: "Advisory Pillars",
+    title: "Our Methodology",
     pillars: [
       {
         icon: Shield,
