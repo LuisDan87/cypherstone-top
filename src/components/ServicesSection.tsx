@@ -9,14 +9,14 @@ const content = {
     text1:
       "El mundo descentralizado puede resultar complejo y abrumador. Nuestra experiencia permite a empresarios e inversores acceder a Bitcoin y DeFi con claridad, seguridad y control total",
     text2:
-      "Cypherstone es su guía de confianza: evacuamos sus dudas, filtramos el ruido informativo y diseñamos el camino más seguro según su perfil. Enseñamos autocustodia, configuramos protocolos personalizados y garantizamos confidencialidad absoluta en cada asesoramiento.",
+      "En Cypherstone somos su guía de confianza: evacuamos sus dudas y diseñamos el camino más seguro según su perfil. Confidencialidad absoluta.",
   },
   en: {
     title: "Our Philosophy",
     text1:
       "The decentralized world can be complex and overwhelming. Our experience enables entrepreneurs and investors to access Bitcoin and DeFi with clarity, security and total control.",
     text2:
-      "Cypherstone is your trusted guide: we clarify your doubts, filter the noise and design the safest path according to your profile. We teach self-custody, configure personalized protocols and guarantee absolute confidentiality in every engagement.",
+      "At Cypherstone we are your trusted guide: we clarify your doubts and design the safest path according to your profile. Absolute confidentiality.",
   },
 };
 
