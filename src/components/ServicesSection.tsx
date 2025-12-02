@@ -7,7 +7,7 @@ const content = {
   es: {
     title: "Nuestra Filosofía",
     text1:
-      "El mundo descentralizado puede resultar complejo y abrumador. Nuestra experiencia permite a empresarios e inversores acceder a Bitcoin y DeFi con claridad, seguridad y control total",
+      "El mundo descentralizado puede resultar complejo y abrumador. Nuestra experiencia permite a empresarios e inversores acceder a Bitcoin y DeFi con claridad, seguridad y control total.",
     text2:
       "En Cypherstone somos su guía de confianza: evacuamos sus dudas y diseñamos el camino más seguro según su perfil. Confidencialidad absoluta.",
   },
