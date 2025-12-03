@@ -25,7 +25,7 @@ export function HeroSection({ lang }: { lang: Language }) {
     });
   };
   return (
-    <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center px-4 md:px-6 py-16 md:py-0 overflow-hidden">
       {/* Radial gradient overlay */}
       <div className="absolute inset-0 bg-gradient-radial from-cyan-500/5 via-transparent to-transparent" />
 
@@ -38,10 +38,10 @@ export function HeroSection({ lang }: { lang: Language }) {
         }}
       />
 
-      <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
+      <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6 md:space-y-8">
         {/* Logo */}
-        <div className="mb-16 animate-fade-in">
-          <img src={logoImage} alt="CYPHERSTONE" className="h-32 md:h-44 lg:h-56 mx-auto" />
+        <div className="mb-8 md:mb-16 animate-fade-in">
+          <img src={logoImage} alt="CYPHERSTONE" className="h-24 sm:h-32 md:h-44 lg:h-56 mx-auto" />
         </div>
 
         {/* Headline */}
@@ -49,7 +49,7 @@ export function HeroSection({ lang }: { lang: Language }) {
           style={{
             animationDelay: "0.2s",
           }}
-          className="text-4xl md:text-6xl font-extrabold leading-tight text-white animate-fade-in lg:text-4xl"
+          className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white animate-fade-in"
         >
           {text.headline}
         </h1>
@@ -67,16 +67,16 @@ export function HeroSection({ lang }: { lang: Language }) {
 
         {/* CTA Button */}
         <div
-          className="pt-6 animate-fade-in"
+          className="pt-4 md:pt-6 animate-fade-in"
           style={{
             animationDelay: "0.6s",
           }}
         >
           <button
             onClick={scrollToContact}
-            className="glass-button px-12 py-5 text-lg font-semibold inline-flex items-center gap-3 group"
+            className="glass-button px-6 sm:px-10 md:px-12 py-4 md:py-5 text-base md:text-lg font-semibold inline-flex items-center gap-2 md:gap-3 group"
           >
-            <Lock className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+            <Lock className="w-4 h-4 md:w-5 md:h-5 group-hover:rotate-12 transition-transform duration-300" />
             {text.cta}
           </button>
         </div>
