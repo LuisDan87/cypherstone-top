@@ -4,37 +4,39 @@ type Language = "es" | "en";
 const content = {
   es: {
     headline: "Asesoría en Bitcoin, cryptomonedas y finanzas descentralizadas",
-    subheadline: "Acompañamos a empresarios, profesionales e inversores en la adopción segura  de Bitcoin, cryptomonedas y finanzas descentralizadas, con absoluta discreción y profesionalismo",
+    subheadline:
+      "Acompañamos a empresarios, profesionales e inversores en la adopción segura  de Bitcoin, cryptomonedas y finanzas descentralizadas, con absoluta discreción y profesionalismo",
     cta: "Agendar consulta confidencial",
-    credibility: "Protegiendo patrimonio desde 2011"
+    credibility: "14 años de experiencia en Bitcoin y criptomonedas",
   },
   en: {
     headline: "Bitcoin, Crypto & Decentralized Finance Advisory",
-    subheadline: "We guide entrepreneurs, professionals and investors in the secure and profitable adoption of Bitcoin, Cryptocurrency and DeFi, with absolute discretion and institutional methodology.",
+    subheadline:
+      "We guide entrepreneurs, professionals and investors in the secure and profitable adoption of Bitcoin, Cryptocurrency and DeFi, with absolute discretion and institutional methodology.",
     cta: "Schedule confidential consultation",
-    credibility: "Protecting wealth since 2011"
-  }
+    credibility: "14 years in Bitcoin and digital assets",
+  },
 };
-export function HeroSection({
-  lang
-}: {
-  lang: Language;
-}) {
+export function HeroSection({ lang }: { lang: Language }) {
   const text = content[lang];
   const scrollToContact = () => {
     document.getElementById("contact")?.scrollIntoView({
-      behavior: "smooth"
+      behavior: "smooth",
     });
   };
-  return <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
+  return (
+    <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
       {/* Radial gradient overlay */}
       <div className="absolute inset-0 bg-gradient-radial from-cyan-500/5 via-transparent to-transparent" />
 
       {/* Floating decorative elements */}
       <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-cyan-400/5 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-magenta-500/5 rounded-full blur-3xl animate-float" style={{
-      animationDelay: "2s"
-    }} />
+      <div
+        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-magenta-500/5 rounded-full blur-3xl animate-float"
+        style={{
+          animationDelay: "2s",
+        }}
+      />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
         {/* Logo */}
@@ -43,25 +45,37 @@ export function HeroSection({
         </div>
 
         {/* Headline */}
-        <h1 style={{
-        animationDelay: "0.2s"
-      }} className="text-4xl md:text-6xl font-extrabold leading-tight text-white animate-fade-in lg:text-4xl">
+        <h1
+          style={{
+            animationDelay: "0.2s",
+          }}
+          className="text-4xl md:text-6xl font-extrabold leading-tight text-white animate-fade-in lg:text-4xl"
+        >
           {text.headline}
         </h1>
 
         {/* Credibility Statement */}
-        <p style={{
-        letterSpacing: "1.5px",
-        animationDelay: "0.4s"
-      }} className="italic font-normal text-center text-muted-foreground animate-fade-in text-lg">
+        <p
+          style={{
+            letterSpacing: "1.5px",
+            animationDelay: "0.4s",
+          }}
+          className="italic font-normal text-center text-muted-foreground animate-fade-in text-lg"
+        >
           {text.credibility}
         </p>
 
         {/* CTA Button */}
-        <div className="pt-6 animate-fade-in" style={{
-        animationDelay: "0.6s"
-      }}>
-          <button onClick={scrollToContact} className="glass-button px-12 py-5 text-lg font-semibold inline-flex items-center gap-3 group">
+        <div
+          className="pt-6 animate-fade-in"
+          style={{
+            animationDelay: "0.6s",
+          }}
+        >
+          <button
+            onClick={scrollToContact}
+            className="glass-button px-12 py-5 text-lg font-semibold inline-flex items-center gap-3 group"
+          >
             <Lock className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
             {text.cta}
           </button>
@@ -77,5 +91,6 @@ export function HeroSection({
 
       {/* Section separator */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent" />
-    </section>;
+    </section>
+  );
 }
