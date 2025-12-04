@@ -46,7 +46,7 @@ export function ContactSection({ lang }: { lang: Language }) {
   const { ref, isInView } = useInView();
 
   
-  const RESEND_API_KEY = "p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCxTYvdjtuPLzOadqoG9g33jEZP6RewczU0JuOuQE3BNn6qA1tYCLvRncJgb78HpNi+fY6C5nA8qFFAFBS0j2LOUHgJ8J9seXNTAsNt1KJrdNi6N0dGivB+vFOn8s5/2RO3DTGoICrKxYHeO4fbNx74UAx+KCFTTQQhVgv5d7OZSwIDAQAB";           // ← pegá tu key real
+  const RESEND_API_KEY = "re_TV8sySRm_7Y6WietEyKWs2RwLA6HnPZqz";           // ← pegá tu key real
   const TU_EMAIL = "info@cypherstone.com.ar";                            // ← tu mail personal
   
 
