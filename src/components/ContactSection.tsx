@@ -17,7 +17,7 @@ const content = {
       submit: "Enviar mensaje encriptado",
       success: "Mensaje enviado. Responderemos en menos de 24 horas.",
     },
-    direct: { whatsapp: "WhatsApp", telegram: "Telegram", email: "Email encriptado" },
+    direct: { whatsapp: "WhatsApp", telegram: "Telegram" },
     disclaimer: "Respuesta en menos de 24 horas",
   },
   en: {
@@ -31,7 +31,7 @@ const content = {
       submit: "Send encrypted message",
       success: "Message sent. We'll respond within 24 hours.",
     },
-    direct: { whatsapp: "WhatsApp", telegram: "Telegram", email: "Encrypted email" },
+    direct: { whatsapp: "WhatsApp", telegram: "Telegram" },
     disclaimer: "Response within 24 hours",
   },
 };
@@ -45,10 +45,10 @@ export function ContactSection({ lang }: { lang: Language }) {
   const [isLoading, setIsLoading] = useState(false);
   const { ref, isInView } = useInView();
 
-  
-  const RESEND_API_KEY = "re_TV8sySRm_7Y6WietEyKWs2RwLA6HnPZqz";           // ← pegá tu key real
-  const TU_EMAIL = "info@cypherstone.com.ar";                            // ← tu mail personal
-  
+  // ← TUS DATOS REALES (nunca más los cambiás)
+  const RESEND_API_KEY = "re_TV8sySRm_7Y6WietEyKWs2RwLA6HnPZqz";
+  const TU_EMAIL = "info@cypherstone.com.ar";                     // ← 
+  // ↑
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -62,31 +62,35 @@ export function ContactSection({ lang }: { lang: Language }) {
           Authorization: `Bearer ${RESEND_API_KEY}`,
         },
         body: JSON.stringify({
-          from: "Cypherstone Contacto <no-reply@cypherstone.com.ar>",
+          // ← 
+          from: "Cypherstone <info@cypherstone.com.ar>",
           to: [TU_EMAIL],
           reply_to: formData.email,
-          subject: `Nueva consulta web – ${formData.name}`,
+          subject: `Nueva consulta – ${formData.name || "Sin nombre"}`,
           html: `
             <h2>Nueva consulta desde cypherstone.com.ar</h2>
-            <p><strong>Nombre:</strong> ${formData.name}</p>
+            <p><strong>Nombre:</strong> ${formData.name || "—"}</p>
             <p><strong>Email:</strong> ${formData.email}</p>
             <p><strong>WhatsApp/Telegram:</strong> ${formData.contact || "—"}</p>
             <p><strong>Mensaje:</strong></p>
-            <p>${formData.message.replace(/\n/g, "<br>")}</p>
+            <p>${formData.message.replace(/\n/g, "<br>") || "—"}</p>
             <hr>
-            <small>Enviado automáticamente desde el ${new Date().toLocaleString("es-AR")}</small>
+            <small>Enviado el ${new Date().toLocaleString("es-AR")}</small>
           `,
         }),
       });
 
-      if (!res.ok) throw new Error("Error al enviar con Resend");
+      if (!res.ok) {
+        const errorText = await res.text();
+        throw new Error(errorText);
+      }
 
-      toast({ title: "Mensaje enviado ✓", description: text.form.success });
+      toast({ title: "¡Enviado!", description: text.form.success });
       setFormData({ name: "", contact: "", email: "", message: "" });
-    } catch (error) {
+    } catch (error: any) {
       toast({
         title: "Error",
-        description: "No se pudo enviar. Intentá de nuevo en unos segundos.",
+        description: "No se pudo enviar (esperando que se active el dominio). Intentá en unos minutos.",
         variant: "destructive",
       });
     } finally {
