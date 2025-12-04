@@ -45,10 +45,10 @@ export function ContactSection({ lang }: { lang: Language }) {
   const [isLoading, setIsLoading] = useState(false);
   const { ref, isInView } = useInView();
 
-  // CAMBIÁ SOLO ESTAS DOS LÍNEAS ↓↓↓
-  const RESEND_API_KEY = "re_TU_API_KEY_DE_RESEND_AQUI";           // ← pegá tu key real
-  const TU_EMAIL = "tuemail@gmail.com";                            // ← tu mail personal
-  // ↑↑↑
+  
+  const RESEND_API_KEY = "p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCxTYvdjtuPLzOadqoG9g33jEZP6RewczU0JuOuQE3BNn6qA1tYCLvRncJgb78HpNi+fY6C5nA8qFFAFBS0j2LOUHgJ8J9seXNTAsNt1KJrdNi6N0dGivB+vFOn8s5/2RO3DTGoICrKxYHeO4fbNx74UAx+KCFTTQQhVgv5d7OZSwIDAQAB";           // ← pegá tu key real
+  const TU_EMAIL = "info@cypherstone.com.ar";                            // ← tu mail personal
+  
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
