@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
 import { ServicesSection } from "@/components/ServicesSection";
 import { PillarsSection } from "@/components/PillarsSection";
+import { PhilosophySection } from "@/components/PhilosophySection";   // ← NUEVO
 import { OurServicesSection } from "@/components/OurServicesSection";
 import { PartnersSection } from "@/components/PartnersSection";
 import { ResourcesSection } from "@/components/ResourcesSection";
@@ -23,6 +24,7 @@ const Index = () => {
         <HeroSection lang={lang} />
         <ServicesSection lang={lang} />
         <PillarsSection lang={lang} />
+        <PhilosophySection lang={lang} />           {/* ←  */}
         <OurServicesSection lang={lang} />
         <PartnersSection lang={lang} />
         <ResourcesSection lang={lang} />
