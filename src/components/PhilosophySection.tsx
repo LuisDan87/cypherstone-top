@@ -6,19 +6,17 @@ type Language = "es" | "en";
 const content = {
   es: {
     title: "Nuestra Filosofía",
-    text1: "El mundo descentralizado puede resultar complejo, arriesgado y abrumador: el exceso de información contradictoria dificulta tomar decisiones seguras. Nuestra experiencia permite a empresarios e inversores acceder a Bitcoin y DeFi con claridad, seguridad y control total sobre sus activos.",
-    text2: "En Cypherstone actuamos como su guía de confianza: evacuamos todas sus dudas, filtramos el ruido informativo y le mostramos el camino más seguro y simple según su perfil. Enseñamos autocustodia segura con hardware wallets, configuramos capas múltiples de autenticación, establecemos respaldos físicos de accesos, y diseñamos protocolos personalizados para cada cliente. Todo bajo confidencialidad absoluta: sus estrategias, operaciones e información patrimonial permanecen privadas",
+    text: "Bitcoin y el mundo crypto, simples y seguros para empresarios y profesionales.\nAsesoramiento exclusivo, estrategias a medida y confidencialidad absoluta.",
   },
   en: {
     title: "Our Philosophy",
-    text1: "The decentralized world can be overwhelming: contradictory information, hidden risks and complex decisions for those taking their first steps. Our experience enables entrepreneurs and investors to access Bitcoin and DeFi with clarity, security and total control.",
-    text2: "Cypherstone is your trusted guide: we clarify your doubts, filter the noise and chart the safest path according to your profile. We teach self-custody with hardware wallets, configure multi-layer authentication, establish physical access backups, and design personalized protocols. All under absolute confidentiality: your strategies and wealth information remain private.",
+    text: "Bitcoin and the crypto world, simple and secure for entrepreneurs and professionals.\nExclusive advisory, tailor-made strategies and absolute confidentiality.",
   },
 };
 
 export function PhilosophySection({ lang }: { lang: Language }) {
-  const text = content[lang];
   const { ref, isInView } = useInView();
+  const current = content[lang];
 
   return (
     <section 
@@ -29,31 +27,28 @@ export function PhilosophySection({ lang }: { lang: Language }) {
     >
       <div className="max-w-4xl mx-auto">
         <div className="flex items-start gap-6">
-          <div className="hidden md:block mt-2">
+          <div className="hidden md:block mt-2 flex-shrink-0">
             <Shield className="w-12 h-12 text-cyan-400" strokeWidth={1.5} />
           </div>
-          
-          <div className="space-y-6">
+
+          <div className="space-y-8">
             <h2 className="text-sm font-semibold tracking-[0.3em] uppercase text-cyan-400">
-              {text.title}
+              {current.title}
             </h2>
-            
-            <div className="space-y-6">
-              <p className="text-xl md:text-2xl font-normal text-gray-light leading-relaxed">
-                {text.text1}
-              </p>
-              
-              {text.text2 && (
-                <p className="text-xl md:text-2xl font-normal text-gray-light leading-relaxed">
-                  {text.text2}
+
+            {/* Texto nuevo, corto y potente */}
+            <div className="space-y-5 text-xl md:text-2xl font-normal text-gray-light leading-snug">
+              {current.text.split("\n").map((line, index) => (
+                <p key={index} className={index === 0 ? "font-medium" : ""}>
+                  {line}
                 </p>
-              )}
+              ))}
             </div>
           </div>
         </div>
       </div>
 
-      {/* Section separator */}
+      {/* Separator */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent" />
     </section>
   );

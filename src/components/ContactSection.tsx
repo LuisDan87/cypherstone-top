@@ -47,7 +47,7 @@ export function ContactSection({ lang }: { lang: Language }) {
 
   // ← 
   const RESEND_API_KEY = import.meta.env.VITE_RESEND_API_KEY;
-  const TU_EMAIL = "Cypherstone <hola@cypherstone.resend.dev>";                     // ← 
+  const TU_EMAIL = "info@cypherstone.com.ar";                     // ← 
   // ↑
 
   const handleSubmit = async (e: React.FormEvent) => {
