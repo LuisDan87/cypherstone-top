@@ -45,9 +45,9 @@ export function ContactSection({ lang }: { lang: Language }) {
   const [isLoading, setIsLoading] = useState(false);
   const { ref, isInView } = useInView();
 
-  // ← TUS DATOS REALES (nunca más los cambiás)
+  // ← 
   const RESEND_API_KEY = import.meta.env.VITE_RESEND_API_KEY;
-  const TU_EMAIL = "info@cypherstone.com.ar";                     // ← 
+  const TU_EMAIL = "Cypherstone <hola@cypherstone.resend.dev>";                     // ← 
   // ↑
 
   const handleSubmit = async (e: React.FormEvent) => {
