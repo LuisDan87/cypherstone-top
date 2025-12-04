@@ -46,7 +46,7 @@ export function ContactSection({ lang }: { lang: Language }) {
   const { ref, isInView } = useInView();
 
   // ← TUS DATOS REALES (nunca más los cambiás)
-  const RESEND_API_KEY = "re_TV8sySRm_7Y6WietEyKWs2RwLA6HnPZqz";
+  const RESEND_API_KEY = import.meta.env.VITE_RESEND_API_KEY;
   const TU_EMAIL = "info@cypherstone.com.ar";                     // ← 
   // ↑
 
