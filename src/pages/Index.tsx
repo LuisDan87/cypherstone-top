@@ -21,9 +21,8 @@ const Index = () => {
         <Header lang={lang} onToggleLang={toggleLang} />
 
         <HeroSection lang={lang} />
-        <ServicesSection lang={lang} />
-        <PillarsSection lang={lang} />
-        <PhilosophySection lang={lang} />           {/* ←  */}
+        <PhilosophySection lang={lang} /> 
+        <PillarsSection lang={lang} />          
         <OurServicesSection lang={lang} />
         <PartnersSection lang={lang} />
         <ResourcesSection lang={lang} />
