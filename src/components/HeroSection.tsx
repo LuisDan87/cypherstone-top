@@ -45,10 +45,10 @@ export function HeroSection({ lang }: { lang: Language }) {
           <img src={logoImage} alt="CYPHERSTONE" className="h-24 sm:h-32 md:h-44 lg:h-56 mx-auto" />
         </div>
 
-        {/* Headline */}
+        {/* ÚNICO CAMBIO: headline más pequeño */}
         <h1
           style={{ animationDelay: "0.2s" }}
-          className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white animate-fade-in"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-white animate-fade-in"
         >
           {text.headline}
         </h1>
