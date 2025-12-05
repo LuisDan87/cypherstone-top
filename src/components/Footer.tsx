@@ -1,4 +1,4 @@
-import { Instagram, Linkedin, Lock } from "lucide-react";
+import { Instagram, Linkedin, MessageCircle, Lock } from "lucide-react";
 
 type Language = "es" | "en";
 
@@ -26,7 +26,6 @@ export function Footer({ lang }: { lang: Language }) {
     <footer className="relative border-t border-white/10 bg-black/40 backdrop-blur-md py-12 md:py-16 px-6">
       <div className="max-w-6xl mx-auto">
 
-        {/* Sección principal */}
         <div className="grid md:grid-cols-3 gap-10 md:gap-8 text-center md:text-left">
 
           {/* Columna 1 – Links legales + partner */}
@@ -48,7 +47,7 @@ export function Footer({ lang }: { lang: Language }) {
             </a>
           </nav>
 
-          {/* Columna 2 – Logo + frase de confianza */}
+          {/* Columna 2 – Logo + confianza */}
           <div className="flex flex-col items-center gap-4">
             <h3 className="text-2xl font-bold text-white tracking-tight">Cypherstone</h3>
             <p className="text-sm text-gray-400 flex items-center gap-2">
@@ -57,32 +56,43 @@ export function Footer({ lang }: { lang: Language }) {
             </p>
           </div>
 
-          {/* Columna 3 – Redes sociales + email */}
+          {/* Columna 3 – Redes + WhatsApp + email */}
           <div className="flex flex-col items-center md:items-end gap-5">
-            {/* Redes sociales */}
             <div className="flex gap-4">
+              {/* WhatsApp */}
+              <a
+                href="https://wa.me/5491138113906"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group p-3 bg-[#25D366]/10 hover:bg-[#25D366]/20 rounded-full border border-[#25D366]/30 transition-all duration-300"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors" />
+              </a>
+
+              {/* Instagram */}
               <a
                 href="https://www.instagram.com/cypherstonebtc/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-3 bg-white/5 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 rounded-full border border-white/10 hover:border-transparent transition-all duration-300"
+                className="group p-3 bg-white/5 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 rounded-full border border-white/10 transition-all duration-300"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors" />
               </a>
 
+              {/* LinkedIn */}
               <a
                 href="https://www.linkedin.com/company/cypherstone"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-3 bg-white/5 hover:bg-blue-600 rounded-full border border-white/10 hover:border-transparent transition-all duration-300"
+                className="group p-3 bg-white/5 hover:bg-blue-600 rounded-full border border-white/10 transition-all duration-300"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors" />
               </a>
             </div>
 
-            {/* Email */}
             <a
               href="mailto:info@cypherstone.com.ar"
               className="text-gray-300 hover:text-cyan-400 font-medium transition-colors"
@@ -92,14 +102,14 @@ export function Footer({ lang }: { lang: Language }) {
           </div>
         </div>
 
-        {/* Copyright centrado debajo */}
+        {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-white/5 text-center">
           <p className="text-xs md:text-sm text-gray-500">
             {text.copyright}
           </p>
         </div>
 
-        {/* Separador sutil superior (opcional, queda muy elegante) */}
+        {/* Separador superior sutil */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent" />
       </div>
     </footer>
