@@ -8,14 +8,14 @@ const content = {
     terms: "Términos",
     partner: "Partner",
     email: "info@cypherstone.com.ar",
-    copyright: "© 2025 Cypherstone — Confidencialidad absoluta",
+    copyright: "© 2025 Cypherstone",
   },
   en: {
     privacy: "Privacy Policy",
     terms: "Terms",
     partner: "Partner",
     email: "info@cypherstone.com.ar",
-    copyright: "© 2025 Cypherstone — Absolute confidentiality",
+    copyright: "© 2025 Cypherstone",
   },
 };
 
