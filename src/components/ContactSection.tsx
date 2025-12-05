@@ -1,4 +1,3 @@
-/* ===================== CONTACT SECTION (sin espacio vacío + WhatsApp perfecto) ===================== */
 import { Lock, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useInView } from "@/hooks/useInView";
@@ -6,7 +5,34 @@ import { useToast } from "@/hooks/use-toast";
 
 type Language = "es" | "en";
 
-const content = { /* tu content igual que antes */ };
+const content = {
+  es: {
+    title: "Contacto Confidencial",
+    subtitle: "Todas las comunicaciones son privadas y confidenciales",
+    form: {
+      name: "Nombre",
+      contact: "WhatsApp",
+      email: "Email",
+      message: "Mensaje",
+      submit: "Enviar mensaje privado",
+      success: "¡Enviado! Te respondemos en menos de 24 hs.",
+    },
+    disclaimer: "Respuesta en menos de 24 horas",
+  },
+  en: {
+    title: "Confidential Contact",
+    subtitle: "All communications are private and confidential",
+    form: {
+      name: "Name",
+      contact: "WhatsApp",
+      email: "Email",
+      message: "Message",
+      submit: "Send private message",
+      success: "Sent! We'll reply within 24 hours.",
+    },
+    disclaimer: "Response within 24 hours",
+  },
+};
 
 export function ContactSection({ lang }: { lang: Language }) {
   const text = content[lang];
@@ -30,7 +56,8 @@ export function ContactSection({ lang }: { lang: Language }) {
             {text.title}
           </h2>
           <p className="text-base text-gray-medium inline-flex items-center gap-2 justify-center">
-            <Lock className="w-4 h-4" /> {text.subtitle}
+            <Lock className="w-4 h-4" />
+            {text.subtitle}
           </p>
         </div>
 
@@ -47,21 +74,28 @@ export function ContactSection({ lang }: { lang: Language }) {
             }}
             className="glass-card p-6 md:p-10 space-y-6"
           >
-            {/* tus inputs igual */}
-            {/* ... */}
+            <div className="grid md:grid-cols-2 gap-6">
+              <input type="text" name="name" placeholder={text.form.name} required className="bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-5 py-4 text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all" />
+              <input type="text" name="contact" placeholder={text.form.contact} className="bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-5 py-4 text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all" />
+            </div>
+
+            <input type="email" name="email" placeholder={text.form.email} required className="w-full bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-5 py-4 text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all" />
+
+            <textarea name="message" placeholder={text.form.message} required rows={5} className="w-full bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-5 py-4 text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all resize-none" />
+
             <button type="submit" disabled={isLoading} className="w-full glass-button px-8 py-5 inline-flex items-center justify-center gap-3 text-base md:text-lg font-semibold disabled:opacity-50">
               {isLoading ? <Loader2 className="w-6 h-6 animate-spin" /> : <Lock className="w-6 h-6" />}
               {isLoading ? (lang === "es" ? "Enviando…" : "Sending…") : text.form.submit}
             </button>
           </form>
 
-          {/* WhatsApp con tu estilo cyan */}
+          {/* WhatsApp en cyan — elegante y coherente */}
           <div className="flex justify-center">
             <a
               href="https://wa.me/5491138113906"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-4 bg-cyan-500/10 hover:bg-cyan-500/20 border-2 border-cyan-400/30 rounded-full transition-all duration-300 hover:scale-110 hover:border-cyan-400"
+              className="group p-4 bg-cyan-500/10 hover:bg-cyan-500/30 rounded-full border border-cyan-400/40 transition-all duration-300 hover:scale-110 hover:border-cyan-400"
               aria-label="WhatsApp"
             >
               <svg viewBox="0 0 24 24" className="w-8 h-8 text-cyan-400 group-hover:text-white transition-colors" fill="currentColor">
