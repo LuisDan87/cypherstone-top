@@ -1,4 +1,4 @@
-import { Lock, Send, MessageCircle, Loader2 } from "lucide-react";
+import { Lock, MessageCircle, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useInView } from "@/hooks/useInView";
 import { useToast } from "@/hooks/use-toast";
@@ -15,7 +15,7 @@ const content = {
       email: "Email",
       message: "Mensaje",
       submit: "Enviar mensaje encriptado",
-      success: "Mensaje enviado. Responderemos en menos de 24 horas.",
+      success: "¡Enviado! Te respondemos en menos de 24 hs.",
     },
     direct: { whatsapp: "WhatsApp", telegram: "Telegram" },
     disclaimer: "Respuesta en menos de 24 horas",
@@ -29,7 +29,7 @@ const content = {
       email: "Email",
       message: "Message",
       submit: "Send encrypted message",
-      success: "Message sent. We'll respond within 24 hours.",
+      success: "Sent! We'll reply within 24 hours.",
     },
     direct: { whatsapp: "WhatsApp", telegram: "Telegram" },
     disclaimer: "Response within 24 hours",
@@ -39,71 +39,19 @@ const content = {
 export function ContactSection({ lang }: { lang: Language }) {
   const text = content[lang];
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "", contact: "", email: "", message: "",
-  });
   const [isLoading, setIsLoading] = useState(false);
   const { ref, isInView } = useInView();
 
-  // ← 
-  const RESEND_API_KEY = import.meta.env.VITE_RESEND_API_KEY;
-  const TU_EMAIL = "info@cypherstone.com.ar";                     // ← 
-  // ↑
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-
-    try {
-      const res = await fetch("https://api.resend.com/emails", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${RESEND_API_KEY}`,
-        },
-        body: JSON.stringify({
-          // ← 
-          from: "Cypherstone <info@cypherstone.com.ar>",
-          to: [TU_EMAIL],
-          reply_to: formData.email,
-          subject: `Nueva consulta – ${formData.name || "Sin nombre"}`,
-          html: `
-            <h2>Nueva consulta desde cypherstone.com.ar</h2>
-            <p><strong>Nombre:</strong> ${formData.name || "—"}</p>
-            <p><strong>Email:</strong> ${formData.email}</p>
-            <p><strong>WhatsApp/Telegram:</strong> ${formData.contact || "—"}</p>
-            <p><strong>Mensaje:</strong></p>
-            <p>${formData.message.replace(/\n/g, "<br>") || "—"}</p>
-            <hr>
-            <small>Enviado el ${new Date().toLocaleString("es-AR")}</small>
-          `,
-        }),
-      });
-
-      if (!res.ok) {
-        const errorText = await res.text();
-        throw new Error(errorText);
-      }
-
-      toast({ title: "¡Enviado!", description: text.form.success });
-      setFormData({ name: "", contact: "", email: "", message: "" });
-    } catch (error: any) {
-      toast({
-        title: "Error",
-        description: "No se pudo enviar (esperando que se active el dominio). Intentá en unos minutos.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
-  };
+  // ←←← SOLO CAMBIÁ ESTA LÍNEA CON TU ENDPOINT DE FORMSPREE
+  const FORMSPREE_URL = "https://formspree.io/f/myzrpwrk"; // ← TU CÓDIGO AQUÍ
+  // ↑↑↑
 
   return (
-    <section id="contact" ref={ref} className={`relative py-16 md:py-32 px-4 md:px-6 transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+    <section
+      id="contact"
+      ref={ref}
+      className={`relative py-16 md:py-32 px-4 md:px-6 transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+    >
       <div className="max-w-4xl mx-auto">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-sm font-semibold tracking-[0.3em] uppercase text-cyan-400">{text.title}</h2>
@@ -113,15 +61,27 @@ export function ContactSection({ lang }: { lang: Language }) {
         </div>
 
         <div className="space-y-8">
-          <form onSubmit={handleSubmit} className="glass-card p-4 md:p-8 space-y-4 md:space-y-6">
+          {/* ← FORMSPREE: solo necesita action y method */}
+          <form
+            action={FORMSPREE_URL}
+            method="POST"
+            onSubmit={() => {
+              setIsLoading(true);
+              setTimeout(() => {
+                toast({ title: "¡Enviado!", description: text.form.success });
+                setIsLoading(false);
+              }, 800);
+            }}
+            className="glass-card p-4 md:p-8 space-y-4 md:space-y-6"
+          >
             <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-              <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder={text.form.name} required className="bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-4 md:px-6 py-3 md:py-4 text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all text-sm md:text-base" />
-              <input type="text" name="contact" value={formData.contact} onChange={handleChange} placeholder={text.form.contact} className="bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-4 md:px-6 py-3 md:py-4 text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all text-sm md:text-base" />
+              <input type="text" name="name" placeholder={text.form.name} required className="bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-4 md:px-6 py-3 md:py-4 text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all text-sm md:text-base" />
+              <input type="text" name="contact" placeholder={text.form.contact} className="bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-4 md:px-6 py-3 md:py-4 text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all text-sm md:text-base" />
             </div>
 
-            <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder={text.form.email} required className="w-full bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-4 md:px-6 py-3 md:py-4 text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all text-sm md:text-base" />
+            <input type="email" name="email" placeholder={text.form.email} required className="w-full bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-4 md:px-6 py-3 md:py-4 text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all text-sm md:text-base" />
 
-            <textarea name="message" value={formData.message} onChange={handleChange} placeholder={text.form.message} required rows={5} className="w-full bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-4 md:px-6 py-3 md:py-4 text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all resize-none text-sm md:text-base" />
+            <textarea name="message" placeholder={text.form.message} required rows={5} className="w-full bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-4 md:px-6 py-3 md:py-4 text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all resize-none text-sm md:text-base" />
 
             <button type="submit" disabled={isLoading} className="w-full glass-button px-6 md:px-8 py-4 md:py-5 inline-flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed text-sm md:text-base">
               {isLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Lock className="w-5 h-5" />}
