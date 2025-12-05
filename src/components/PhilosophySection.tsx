@@ -6,12 +6,12 @@ type Language = "es" | "en";
 const content = {
   es: {
     title: "Nuestra Filosofía",
-    line1: "Bitcoin y el mundo crypto — simple y seguro — para empresarios y profesionales.",
+    line1: "Bitcoin y el mundo crypto & web3 — simple y seguro — para empresarios y profesionales.",
     line2: "Asesoramiento exclusivo, estrategias a medida y confidencialidad absoluta.",
   },
   en: {
     title: "Our Philosophy",
-    line1: "Bitcoin and the crypto world — simple and secure — for entrepreneurs and professionals.",
+    line1: "Bitcoin and the crypto & web3 world — simple and secure — for entrepreneurs and professionals.",
     line2: "Exclusive advisory, tailor-made strategies and absolute confidentiality.",
   },
 };

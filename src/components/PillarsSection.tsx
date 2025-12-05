@@ -13,19 +13,51 @@ const content: Record<Language, { title: string; pillars: Pillar[] }> = {
   es: {
     title: "Nuestra Metodología",
     pillars: [
-      { icon: Shield, title: "Custodia Segura", description: "Custodia segura: hardware wallet, Yubikey, TOTP, password manager y resguardo físico de seed phrases" },
-      { icon: TrendingUp, title: "Estrategias Conservadoras", description: "Estrategias conservadoras en DeFi con máxima protección de capital" },
-      { icon: Settings, title: "Selección de Herramientas", description: "Selección y configuración óptima de herramientas y billeteras" },
-      { icon: Trees, title: "Planificación Patrimonial", description: "Planificación patrimonial y fiscal eficiente" },
+      { 
+        icon: Shield, 
+        title: "Custodia Segura", 
+        description: "Custodia segura: hardware wallet, Yubikey, TOTP, password manager y resguardo físico de seed phrases" 
+      },
+      { 
+        icon: TrendingUp, 
+        title: "Estrategias Conservadoras", 
+        description: "Estrategias conservadoras en DeFi y web3 con máxima protección de capital" 
+      },
+      { 
+        icon: Settings, 
+        title: "Selección de Herramientas", 
+        description: "Selección y configuración óptima de herramientas y billeteras" 
+      },
+      { 
+        icon: Trees, 
+        title: "Planificación Patrimonial", 
+        description: "Planificación patrimonial y fiscal eficiente" 
+      },
     ],
   },
   en: {
     title: "Our Methodology",
     pillars: [
-      { icon: Shield, title: "Secure Custody", description: "Secure Custody: hardware wallet, Yubikey, TOTP, password manager and physical backup of seed phrases" },
-      { icon: TrendingUp, title: "Conservative Strategies", description: "Conservative DeFi strategies with maximum capital protection" },
-      { icon: Settings, title: "Tool Selection", description: "Optimal selection and configuration of tools and wallets" },
-      { icon: Trees, title: "Wealth Planning", description: "Efficient wealth and tax planning" },
+      { 
+        icon: Shield, 
+        title: "Secure Custody", 
+        description: "Secure Custody: hardware wallet, Yubikey, TOTP, password manager and physical backup of seed phrases" 
+      },
+      { 
+        icon: TrendingUp, 
+        title: "Conservative Strategies", 
+        description: "Conservative strategies in DeFi and web3 with maximum capital protection" 
+      },
+      { 
+        icon: Settings, 
+        title: "Tool Selection", 
+        description: "Optimal selection and configuration of tools and wallets" 
+      },
+      { 
+        icon: Trees, 
+        title: "Wealth Planning", 
+        description: "Efficient wealth and tax planning" 
+      },
     ],
   },
 };
@@ -44,7 +76,6 @@ export function PillarsSection({ lang }: { lang: Language }) {
     >
       <div className="max-w-6xl mx-auto">
 
-        {/* Título sigue en cyan (marca registrada) */}
         <h2 className="text-sm font-semibold tracking-[0.3em] uppercase text-cyan-400 text-center mb-16">
           {text.title}
         </h2>
@@ -61,7 +92,6 @@ export function PillarsSection({ lang }: { lang: Language }) {
                 style={{ transitionDelay: isInView ? `${index * 150}ms` : "0ms" }}
               >
                 <div className="mb-6">
-                  {/* Marco magenta visible pero elegante */}
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500/30 via-magenta-500/20 to-purple-600/10 p-[2px] shadow-lg shadow-pink-500/10">
                     <div className="w-full h-full rounded-2xl bg-black flex items-center justify-center">
                       <Icon
@@ -85,7 +115,6 @@ export function PillarsSection({ lang }: { lang: Language }) {
         </div>
       </div>
 
-      {/* Separator sigue en cyan */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent" />
     </section>
   );
