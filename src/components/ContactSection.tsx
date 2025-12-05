@@ -1,4 +1,4 @@
-import { Lock, MessageCircle, Loader2 } from "lucide-react";
+import { Lock, Send, MessageCircle, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useInView } from "@/hooks/useInView";
 import { useToast } from "@/hooks/use-toast";
@@ -42,9 +42,9 @@ export function ContactSection({ lang }: { lang: Language }) {
   const [isLoading, setIsLoading] = useState(false);
   const { ref, isInView } = useInView();
 
-  // ←←← SOLO CAMBIÁ ESTA LÍNEA CON TU ENDPOINT DE FORMSPREE
-  const FORMSPREE_URL = "https://formspree.io/f/myzrpwrk"; // ← TU CÓDIGO AQUÍ
-  // ↑↑↑
+  // ← CAMBIÁ SOLO ESTA LÍNEA CON TU ENDPOINT DE FORMSPREE
+  const FORMSPREE_URL = "https://formspree.io/f/myzrpwrk"; // ← pegá tu link real
+  // ↑
 
   return (
     <section
@@ -61,7 +61,6 @@ export function ContactSection({ lang }: { lang: Language }) {
         </div>
 
         <div className="space-y-8">
-          {/* ← FORMSPREE: solo necesita action y method */}
           <form
             action={FORMSPREE_URL}
             method="POST"
