@@ -6,12 +6,12 @@ type Language = "es" | "en";
 const content = {
   es: {
     title: "Nuestra Filosofía",
-    line1: "Bitcoin y el mundo crypto, simples y seguros para empresarios y profesionales.",
+    line1: "Bitcoin y el mundo crypto & web3 — simple y seguro — para empresarios y profesionales.",
     line2: "Asesoramiento exclusivo, estrategias a medida y confidencialidad absoluta.",
   },
   en: {
     title: "Our Philosophy",
-    line1: "Bitcoin and the crypto world, simple and secure for entrepreneurs and professionals.",
+    line1: "Bitcoin and the crypto & web3 world — simple and secure — for entrepreneurs and professionals.",
     line2: "Exclusive advisory, tailor-made strategies and absolute confidentiality.",
   },
 };
@@ -27,22 +27,28 @@ export function PhilosophySection({ lang }: PhilosophySectionProps) {
   return (
     <section
       ref={ref}
-      className={`relative py-32 px-6 border-t border-b border-cyan-400/20 transition-all duration-700 ${
+      className={`relative py-20 md:py-32 px-6 border-t border-b border-cyan-400/20 transition-all duration-700 ${
         isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >
       <div className="max-w-4xl mx-auto">
-        <div className="flex items-start gap-6">
+        <div className="flex flex-col md:flex-row items-start gap-6 md:gap-8">
+          {/* Escudo solo en desktop, en móvil lo sacamos para ahorrar espacio */}
           <div className="hidden md:block mt-2 flex-shrink-0">
             <Shield className="w-12 h-12 text-cyan-400" strokeWidth={1.5} />
           </div>
 
-          <div className="space-y-8">
-            <h2 className="text-sm font-semibold tracking-[0.3em] uppercase text-cyan-400">
+          {/* En móvil mostramos el escudo más pequeño arriba del texto */}
+          <div className="md:hidden flex justify-center w-full mb-4">
+            <Shield className="w-10 h-10 text-cyan-400" strokeWidth={1.5} />
+          </div>
+
+          <div className="space-y-6 md:space-y-8 w-full">
+            <h2 className="text-sm font-semibold tracking-[0.3em] uppercase text-cyan-400 text-center md:text-left">
               {t.title}
             </h2>
 
-            <div className="space-y-5 text-xl md:text-2xl font-normal text-gray-300 leading-snug">
+            <div className="space-y-5 text-xl md:text-2xl font-normal text-gray-300 leading-snug text-center md:text-left">
               <p className="font-medium">{t.line1}</p>
               <p>{t.line2}</p>
             </div>

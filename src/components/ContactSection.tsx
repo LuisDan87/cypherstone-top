@@ -1,4 +1,4 @@
-import { Lock, MessageCircle, Loader2 } from "lucide-react";
+import { Lock, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useInView } from "@/hooks/useInView";
 import { useToast } from "@/hooks/use-toast";
@@ -17,7 +17,6 @@ const content = {
       submit: "Enviar mensaje privado",
       success: "¡Enviado! Te respondemos en menos de 24 hs.",
     },
-    direct: { whatsapp: "WhatsApp" },
     disclaimer: "Respuesta en menos de 24 horas",
   },
   en: {
@@ -31,7 +30,6 @@ const content = {
       submit: "Send private message",
       success: "Sent! We'll reply within 24 hours.",
     },
-    direct: { whatsapp: "WhatsApp" },
     disclaimer: "Response within 24 hours",
   },
 };
@@ -42,28 +40,28 @@ export function ContactSection({ lang }: { lang: Language }) {
   const [isLoading, setIsLoading] = useState(false);
   const { ref, isInView } = useInView();
 
-  // TU ENDPOINT REAL DE FORMSPREE (ya lo tenés)
   const FORMSPREE_URL = "https://formspree.io/f/myzrpwrk";
 
   return (
     <section
       id="contact"
       ref={ref}
-      className={`relative py-16 md:py-32 px-4 md:px-6 transition-all duration-700 ${
+      className={`relative py-12 md:py-20 px-4 md:px-6 transition-all duration-700 ${
         isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >
       <div className="max-w-4xl mx-auto">
-        <div className="text-center space-y-4 mb-12">
+        <div className="text-center space-y-4 mb-8 md:mb-10">
           <h2 className="text-sm font-semibold tracking-[0.3em] uppercase text-cyan-400">
             {text.title}
           </h2>
-          <p className="text-base text-gray-medium inline-flex items-center gap-2 justify-center">
-            <Lock className="w-4 h-4" /> {text.subtitle}
+          <p className="text-base text-gray-300 md:text-gray-medium inline-flex items-center gap-2 justify-center">
+            <Lock className="w-5 h-5 md:w-4 md:h-4" />
+            {text.subtitle}
           </p>
         </div>
 
-        <div className="space-y-8">
+        <div className="max-w-2xl mx-auto space-y-8">
           <form
             action={FORMSPREE_URL}
             method="POST"
@@ -74,21 +72,21 @@ export function ContactSection({ lang }: { lang: Language }) {
                 setIsLoading(false);
               }, 800);
             }}
-            className="glass-card p-4 md:p-8 space-y-4 md:space-y-6"
+            className="glass-card p-6 md:p-10 space-y-6"
           >
-            <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+            <div className="grid md:grid-cols-2 gap-6">
               <input
                 type="text"
                 name="name"
                 placeholder={text.form.name}
                 required
-                className="bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-4 md:px-6 py-3 md:py-4 text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all text-sm md:text-base"
+                className="bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-5 py-5 md:py-4 text-base text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
               />
               <input
                 type="text"
                 name="contact"
                 placeholder={text.form.contact}
-                className="bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-4 md:px-6 py-3 md:py-4 text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all text-sm md:text-base"
+                className="bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-5 py-5 md:py-4 text-base text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
               />
             </div>
 
@@ -97,7 +95,7 @@ export function ContactSection({ lang }: { lang: Language }) {
               name="email"
               placeholder={text.form.email}
               required
-              className="w-full bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-4 md:px-6 py-3 md:py-4 text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all text-sm md:text-base"
+              className="w-full bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-5 py-5 md:py-4 text-base text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
             />
 
             <textarea
@@ -105,33 +103,22 @@ export function ContactSection({ lang }: { lang: Language }) {
               placeholder={text.form.message}
               required
               rows={5}
-              className="w-full bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-4 md:px-6 py-3 md:py-4 text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all resize-none text-sm md:text-base"
+              className="w-full bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-5 py-5 md:py-4 text-base text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all resize-none"
             />
 
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full glass-button px-6 md:px-8 py-4 md:py-5 inline-flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed text-sm md:text-base"
+              className="w-full glass-button px-8 py-6 md:py-5 inline-flex items-center justify-center gap-3 text-lg md:text-base font-semibold disabled:opacity-50"
             >
-              {isLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Lock className="w-5 h-5" />}
+              {isLoading ? <Loader2 className="w-6 h-6 animate-spin" /> : <Lock className="w-6 h-6" />}
               {isLoading ? (lang === "es" ? "Enviando…" : "Sending…") : text.form.submit}
             </button>
           </form>
 
-          {/* SOLO WhatsApp */}
-          <div className="flex justify-center">
-            <a
-              href="https://wa.me/5491138113906"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-[#25D366]/10 hover:bg-[#25D366]/20 border-2 border-[#25D366]/30 rounded-xl md:rounded-2xl px-8 py-4 text-white font-semibold transition-all hover:scale-105"
-            >
-              <MessageCircle className="w-6 h-6" />
-              {text.direct.whatsapp}
-            </a>
-          </div>
-
-          <p className="text-center text-sm text-gray-dark">{text.disclaimer}</p>
+          <p className="text-center text-gray-300 md:text-gray-400 text-base md:text-base mt-6">
+            {text.disclaimer}
+          </p>
         </div>
       </div>
     </section>

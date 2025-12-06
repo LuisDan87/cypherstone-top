@@ -32,12 +32,12 @@ export function Header({ lang, onToggleLang }: { lang: Language; onToggleLang: (
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo + Nombre */}
         <div className="flex items-center gap-3">
-          <img src={stoneLogo} alt="Stone" className="h-10 w-auto" />
-          <span className="text-white font-bold text-xl tracking-wider">CYPHERSTONE</span>
+          <img src={stoneLogo} alt="Cypherstone" className="h-10 w-auto md:h-10" />
+          <span className="text-white font-bold text-xl md:text-xl tracking-wider">CYPHERSTONE</span>
         </div>
 
         {/* Navegación Desktop */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-8">
           {navItems[lang].map((item) => (
             <button
               key={item.href}
@@ -56,35 +56,38 @@ export function Header({ lang, onToggleLang }: { lang: Language; onToggleLang: (
           </button>
         </nav>
 
-        {/* Botón Hamburguesa Móvil */}
+        {/* Botón Hamburguesa Móvil - MÁS GRANDE */}
         <button
-          className="md:hidden text-foreground p-2"
+          className="md:hidden text-white p-3 rounded-lg hover:bg-white/10 transition"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {/* Menú Móvil Desplegable */}
+      {/* Menú Móvil Desplegable - MÁS CÓMODO */}
       {isMenuOpen && (
-        <div className="md:hidden bg-black/95 backdrop-blur-xl border-b border-white/10 animate-fade-in">
-          <nav className="flex flex-col items-center gap-4 py-6">
+        <div className="md:hidden bg-black/95 backdrop-blur-xl border-b border-white/10">
+          <nav className="flex flex-col items-center gap-1 py-8 px-6">
             {navItems[lang].map((item) => (
               <button
                 key={item.href}
                 onClick={() => scrollTo(item.href)}
-                className="text-muted-foreground hover:text-primary text-base font-medium transition-colors"
+                className="text-white hover:text-cyan-400 text-lg font-medium transition-colors py-4 w-full text-center border-b border-white/5 last:border-0"
               >
                 {item.label}
               </button>
             ))}
             
-            {/* Toggle idioma */}
-            <button onClick={onToggleLang} className="flex items-center gap-2 text-sm font-semibold mt-2">
-              <span className={lang === "es" ? "text-primary" : "text-muted-foreground"}>ES</span>
-              <span className="text-muted-foreground">|</span>
-              <span className={lang === "en" ? "text-primary" : "text-muted-foreground"}>EN</span>
+            {/* Toggle idioma en móvil */}
+            <button 
+              onClick={onToggleLang} 
+              className="flex items-center gap-3 text-lg font-semibold mt-6 py-4"
+            >
+              <span className={lang === "es" ? "text-cyan-400" : "text-gray-500"}>ES</span>
+              <span className="text-gray-600">|</span>
+              <span className={lang === "en" ? "text-cyan-400" : "text-gray-500"}>EN</span>
             </button>
           </nav>
         </div>

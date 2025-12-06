@@ -81,30 +81,30 @@ export function OurServicesSection({ lang }: { lang: Language }) {
     <section 
       id="services"
       ref={ref}
-      className={`relative py-32 px-6 transition-all duration-700 ${
+      className={`relative py-20 md:py-32 px-6 transition-all duration-700 ${
         isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-sm font-semibold tracking-[0.3em] uppercase text-cyan-400 text-center mb-4">
+        <h2 className="text-sm font-semibold tracking-[0.3em] uppercase text-cyan-400 text-center mb-4 md:mb-6">
           {text.title}
         </h2>
         
-        <p className="text-lg font-light text-gray-medium text-center mb-16">
+        <p className="text-lg md:text-xl font-light text-gray-300 md:text-gray-medium text-center mb-12 md:mb-16 leading-relaxed max-w-3xl mx-auto">
           {text.subtitle}
         </p>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
           {text.services.map((service, index) => {
             const Icon = service.icon;
             return (
               <div
                 key={index}
-                className={`relative bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-3xl p-9 md:p-12 group transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_60px_rgba(0,217,255,0.15)] hover:border-cyan-400/50 ${
+                className={`relative bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 group transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_60px_rgba(0,217,255,0.15)] hover:border-cyan-400/50 ${
                   isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
                 style={{
-                  transitionDelay: isInView ? `${index * 150}ms` : '0ms',
+                  transitionDelay: isInView ? `${index * 150}ms` : "0ms",
                 }}
               >
                 <div className="mb-6">
@@ -114,15 +114,15 @@ export function OurServicesSection({ lang }: { lang: Language }) {
                   />
                 </div>
 
-                <h3 className="text-xl font-bold text-white mb-4">
+                <h3 className="text-xl md:text-xl font-bold text-white mb-4">
                   {service.title}
                 </h3>
 
-                <p className="text-base text-gray-medium leading-relaxed mb-4">
+                <p className="text-base md:text-base text-gray-300 md:text-gray-medium leading-loose md:leading-relaxed mb-4">
                   {service.description}
                 </p>
 
-                <p className="text-sm italic text-gray-500 leading-relaxed">
+                <p className="text-sm md:text-sm italic text-gray-400 md:text-gray-500 leading-relaxed">
                   {service.ideal}
                 </p>
               </div>
@@ -131,7 +131,6 @@ export function OurServicesSection({ lang }: { lang: Language }) {
         </div>
       </div>
 
-      {/* Section separator */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent" />
     </section>
   );
