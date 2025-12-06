@@ -46,17 +46,17 @@ export function ContactSection({ lang }: { lang: Language }) {
     <section
       id="contact"
       ref={ref}
-      className={`relative py-16 md:py-20 pb-12 md:pb-16 px-4 md:px-6 transition-all duration-700 ${
+      className={`relative py-12 md:py-20 px-4 md:px-6 transition-all duration-700 ${
         isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >
       <div className="max-w-4xl mx-auto">
-        <div className="text-center space-y-4 mb-10">
+        <div className="text-center space-y-4 mb-8 md:mb-10">
           <h2 className="text-sm font-semibold tracking-[0.3em] uppercase text-cyan-400">
             {text.title}
           </h2>
-          <p className="text-base text-gray-medium inline-flex items-center gap-2 justify-center">
-            <Lock className="w-4 h-4" />
+          <p className="text-base text-gray-300 md:text-gray-medium inline-flex items-center gap-2 justify-center">
+            <Lock className="w-5 h-5 md:w-4 md:h-4" />
             {text.subtitle}
           </p>
         </div>
@@ -116,9 +116,7 @@ export function ContactSection({ lang }: { lang: Language }) {
             </button>
           </form>
 
-          {/* BOTÓN VERDE GRANDE ELIMINADO → WhatsApp ahora está solo en el mini-footer */}
-
-          <p className="text-center text-gray-400 text-base md:text-base mt-8">
+          <p className="text-center text-gray-300 md:text-gray-400 text-base md:text-base mt-6">
             {text.disclaimer}
           </p>
         </div>

@@ -81,20 +81,20 @@ export function OurServicesSection({ lang }: { lang: Language }) {
     <section 
       id="services"
       ref={ref}
-      className={`relative py-32 px-6 transition-all duration-700 ${
+      className={`relative py-20 md:py-32 px-6 transition-all duration-700 ${
         isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-sm font-semibold tracking-[0.3em] uppercase text-cyan-400 text-center mb-4">
+        <h2 className="text-sm font-semibold tracking-[0.3em] uppercase text-cyan-400 text-center mb-4 md:mb-6">
           {text.title}
         </h2>
         
-        <p className="text-lg md:text-lg font-light text-gray-300 md:text-gray-medium text-center mb-16 leading-relaxed">
+        <p className="text-lg md:text-xl font-light text-gray-300 md:text-gray-medium text-center mb-12 md:mb-16 leading-relaxed max-w-3xl mx-auto">
           {text.subtitle}
         </p>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
           {text.services.map((service, index) => {
             const Icon = service.icon;
             return (
@@ -104,7 +104,7 @@ export function OurServicesSection({ lang }: { lang: Language }) {
                   isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
                 style={{
-                  transitionDelay: isInView ? `${index * 150}ms` : '0ms',
+                  transitionDelay: isInView ? `${index * 150}ms` : "0ms",
                 }}
               >
                 <div className="mb-6">
