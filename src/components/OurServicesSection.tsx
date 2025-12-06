@@ -90,7 +90,7 @@ export function OurServicesSection({ lang }: { lang: Language }) {
           {text.title}
         </h2>
         
-        <p className="text-lg font-light text-gray-medium text-center mb-16">
+        <p className="text-lg md:text-lg font-light text-gray-300 md:text-gray-medium text-center mb-16 leading-relaxed">
           {text.subtitle}
         </p>
 
@@ -100,7 +100,7 @@ export function OurServicesSection({ lang }: { lang: Language }) {
             return (
               <div
                 key={index}
-                className={`relative bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-3xl p-9 md:p-12 group transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_60px_rgba(0,217,255,0.15)] hover:border-cyan-400/50 ${
+                className={`relative bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 group transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_60px_rgba(0,217,255,0.15)] hover:border-cyan-400/50 ${
                   isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
                 style={{
@@ -114,15 +114,15 @@ export function OurServicesSection({ lang }: { lang: Language }) {
                   />
                 </div>
 
-                <h3 className="text-xl font-bold text-white mb-4">
+                <h3 className="text-xl md:text-xl font-bold text-white mb-4">
                   {service.title}
                 </h3>
 
-                <p className="text-base text-gray-medium leading-relaxed mb-4">
+                <p className="text-base md:text-base text-gray-300 md:text-gray-medium leading-loose md:leading-relaxed mb-4">
                   {service.description}
                 </p>
 
-                <p className="text-sm italic text-gray-500 leading-relaxed">
+                <p className="text-sm md:text-sm italic text-gray-400 md:text-gray-500 leading-relaxed">
                   {service.ideal}
                 </p>
               </div>
@@ -131,7 +131,6 @@ export function OurServicesSection({ lang }: { lang: Language }) {
         </div>
       </div>
 
-      {/* Section separator */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent" />
     </section>
   );
