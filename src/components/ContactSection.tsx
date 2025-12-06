@@ -80,13 +80,13 @@ export function ContactSection({ lang }: { lang: Language }) {
                 name="name"
                 placeholder={text.form.name}
                 required
-                className="bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-5 py-4 text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
+                className="bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-5 py-5 md:py-4 text-base text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
               />
               <input
                 type="text"
                 name="contact"
                 placeholder={text.form.contact}
-                className="bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-5 py-4 text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
+                className="bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-5 py-5 md:py-4 text-base text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
               />
             </div>
 
@@ -95,7 +95,7 @@ export function ContactSection({ lang }: { lang: Language }) {
               name="email"
               placeholder={text.form.email}
               required
-              className="w-full bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-5 py-4 text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
+              className="w-full bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-5 py-5 md:py-4 text-base text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
             />
 
             <textarea
@@ -103,20 +103,20 @@ export function ContactSection({ lang }: { lang: Language }) {
               placeholder={text.form.message}
               required
               rows={5}
-              className="w-full bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-5 py-4 text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all resize-none"
+              className="w-full bg-white/5 border border-white/20 rounded-xl md:rounded-2xl px-5 py-5 md:py-4 text-base text-white placeholder:text-gray-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all resize-none"
             />
 
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full glass-button px-8 py-5 inline-flex items-center justify-center gap-3 text-base md:text-lg font-semibold disabled:opacity-50"
+              className="w-full glass-button px-8 py-6 md:py-5 inline-flex items-center justify-center gap-3 text-lg md:text-base font-semibold disabled:opacity-50"
             >
               {isLoading ? <Loader2 className="w-6 h-6 animate-spin" /> : <Lock className="w-6 h-6" />}
               {isLoading ? (lang === "es" ? "Enviando…" : "Sending…") : text.form.submit}
             </button>
           </form>
 
-          {/* WhatsApp Button – Logo oficial perfecto 2025 */}
+          {/* WhatsApp Button – Ya está perfecto */}
           <div className="flex justify-center">
             <a
               href="https://wa.me/5491138113906"
@@ -136,7 +136,7 @@ export function ContactSection({ lang }: { lang: Language }) {
             </a>
           </div>
 
-          <p className="text-center text-gray-400 text-sm md:text-base">
+          <p className="text-center text-gray-400 text-base md:text-base">
             {text.disclaimer}
           </p>
         </div>
