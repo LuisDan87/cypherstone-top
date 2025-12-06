@@ -80,13 +80,13 @@ export function PillarsSection({ lang }: { lang: Language }) {
           {text.title}
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-8">
           {text.pillars.map((pillar, index) => {
             const Icon = pillar.icon;
             return (
               <div
                 key={index}
-                className={`relative bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-3xl p-9 md:p-12 group transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_70px_rgba(219,39,119,0.18)] hover:border-pink-500/40 ${
+                className={`relative bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 group transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_70px_rgba(219,39,119,0.18)] hover:border-pink-500/40 ${
                   isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
                 style={{ transitionDelay: isInView ? `${index * 150}ms` : "0ms" }}
@@ -102,11 +102,11 @@ export function PillarsSection({ lang }: { lang: Language }) {
                   </div>
                 </div>
 
-                <h3 className="text-xl font-bold text-white mb-4">
+                <h3 className="text-xl md:text-xl font-bold text-white mb-4">
                   {pillar.title}
                 </h3>
 
-                <p className="text-base text-gray-medium leading-relaxed">
+                <p className="text-base md:text-base text-gray-300 md:text-gray-medium leading-loose md:leading-relaxed">
                   {pillar.description}
                 </p>
               </div>
