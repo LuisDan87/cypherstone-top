@@ -70,17 +70,17 @@ export function PillarsSection({ lang }: { lang: Language }) {
     <section
       id="methodology"
       ref={ref}
-      className={`relative py-32 px-6 transition-all duration-700 ${
+      className={`relative py-20 md:py-32 px-6 transition-all duration-700 ${
         isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >
       <div className="max-w-6xl mx-auto">
 
-        <h2 className="text-sm font-semibold tracking-[0.3em] uppercase text-cyan-400 text-center mb-16">
+        <h2 className="text-sm font-semibold tracking-[0.3em] uppercase text-cyan-400 text-center mb-12 md:mb-16">
           {text.title}
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-8 md:gap-8">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
           {text.pillars.map((pillar, index) => {
             const Icon = pillar.icon;
             return (
@@ -102,11 +102,11 @@ export function PillarsSection({ lang }: { lang: Language }) {
                   </div>
                 </div>
 
-                <h3 className="text-xl md:text-xl font-bold text-white mb-4">
+                <h3 className="text-xl font-bold text-white mb-4">
                   {pillar.title}
                 </h3>
 
-                <p className="text-base md:text-base text-gray-300 md:text-gray-medium leading-loose md:leading-relaxed">
+                <p className="text-base text-gray-300 md:text-gray-medium leading-loose md:leading-relaxed">
                   {pillar.description}
                 </p>
               </div>
