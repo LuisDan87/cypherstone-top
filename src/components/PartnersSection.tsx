@@ -37,31 +37,31 @@ export function PartnersSection({ lang }: { lang: Language }) {
     <section 
       id="partners"
       ref={ref}
-      className={`relative py-32 px-6 transition-all duration-700 ${
+      className={`relative py-20 md:py-32 px-6 transition-all duration-700 ${
         isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-sm font-semibold tracking-[0.3em] uppercase text-cyan-400 text-center mb-16">
+        <h2 className="text-sm font-semibold tracking-[0.3em] uppercase text-cyan-400 text-center mb-10 md:mb-16">
           {text.title}
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
           {/* Cybermassive Card */}
           <a
             href="https://cybermassive.tech"
             target="_blank"
             rel="noopener noreferrer"
-            className="glass-card p-12 group hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_0_25px_rgba(0,217,255,0.1)] cursor-pointer"
+            className="glass-card p-8 md:p-12 group hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_0_25px_rgba(0,217,255,0.1)] cursor-pointer"
           >
             <div className="flex flex-col items-center text-center space-y-6">
               <img 
                 src={cybermassiveLogo} 
                 alt="CYBERMASSIVE" 
-                className="h-30 md:h-36 w-auto"
+                className="h-28 md:h-36 w-auto"
               />
 
-              <p className="text-base text-gray-medium leading-relaxed">
+              <p className="text-base md:text-base text-gray-300 md:text-gray-medium leading-relaxed">
                 {text.cybermassive.description}
               </p>
 
@@ -73,7 +73,7 @@ export function PartnersSection({ lang }: { lang: Language }) {
           </a>
 
           {/* Reserved Space Card */}
-          <div className="glass-card p-12 border-dashed border-2 border-white/15 opacity-60">
+          <div className="glass-card p-8 md:p-12 border-dashed border-2 border-white/15 opacity-60">
             <div className="flex flex-col items-center text-center space-y-6 h-full justify-center">
               <div className="w-16 h-16 rounded-full border-2 border-dashed border-gray-dark/50 flex items-center justify-center">
                 <Plus className="w-8 h-8 text-gray-dark" />
@@ -83,7 +83,7 @@ export function PartnersSection({ lang }: { lang: Language }) {
                 <p className="text-lg italic text-gray-dark font-medium">
                   {text.reserved.title}
                 </p>
-                <p className="text-sm text-gray-dark">
+                <p className="text-sm md:text-sm text-gray-dark">
                   {text.reserved.description}
                 </p>
               </div>
@@ -92,7 +92,6 @@ export function PartnersSection({ lang }: { lang: Language }) {
         </div>
       </div>
 
-      {/* Section separator */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent" />
     </section>
   );
