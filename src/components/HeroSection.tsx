@@ -30,8 +30,8 @@ export function HeroSection({ lang }: { lang: Language }) {
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-magenta-500/5 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6 md:space-y-8">
-        {/* LOGO INTERMEDIO, CENTRADO Y CON CALIDAD PERFECTA */}
-        <div className="mb-10 md:mb-16 animate-fade-in">
+        {/* LOGO - Más pequeño en móvil */}
+        <div className="mb-8 md:mb-16 animate-fade-in">
           <img
             src={logoImage}
             alt="CYPHERSTONE"
@@ -39,32 +39,30 @@ export function HeroSection({ lang }: { lang: Language }) {
           />
         </div>
 
-        <h1
-          style={{ animationDelay: "0.2s" }}
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-white animate-fade-in"
-        >
+        {/* Headline - Más compacto en móvil */}
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-white animate-fade-in">
           {text.headline}
         </h1>
 
-        <p
-          style={{ letterSpacing: "1.5px", animationDelay: "0.4s" }}
-          className="italic font-normal text-center text-muted-foreground animate-fade-in text-lg"
-        >
+        {/* Credibilidad */}
+        <p className="italic font-normal text-center text-gray-300 md:text-gray-400 animate-fade-in text-base md:text-lg">
           {text.credibility}
         </p>
 
-        <div className="pt-4 md:pt-6 animate-fade-in" style={{ animationDelay: "0.6s" }}>
+        {/* CTA */}
+        <div className="pt-6 md:pt-8 animate-fade-in">
           <button
             onClick={scrollToContact}
-            className="glass-button px-6 sm:px-10 md:px-12 py-4 md:py-5 text-base md:text-lg font-semibold inline-flex items-center gap-2 md:gap-3 group"
+            className="glass-button px-8 py-5 md:py-5 text-base md:text-lg font-semibold inline-flex items-center gap-3 group"
           >
-            <Lock className="w-4 h-4 md:w-5 md:h-5 group-hover:rotate-12 transition-transform duration-300" />
+            <Lock className="w-5 h-5 md:w-5 md:h-5 group-hover:rotate-12 transition-transform duration-300" />
             {text.cta}
           </button>
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      {/* Flecha scroll solo en móvil */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce md:hidden">
         <div className="w-6 h-10 border-2 border-cyan-400/50 rounded-full flex items-start justify-center p-2">
           <div className="w-1 h-2 bg-cyan-400 rounded-full" />
         </div>
