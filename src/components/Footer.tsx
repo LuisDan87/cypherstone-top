@@ -29,37 +29,42 @@ export function Footer({ lang }: { lang: Language }) {
         <div className="grid md:grid-cols-3 gap-10 text-center md:text-left">
 
           {/* Links legales */}
-          <nav className="flex flex-col gap-3 text-sm">
-            <a href="#privacy" className="text-gray-400 hover:text-cyan-400 transition">{text.privacy}</a>
-            <a href="#terms" className="text-gray-400 hover:text-cyan-400 transition">{text.terms}</a>
-            <a href="https://cybermassive.tech" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyan-400 transition inline-flex items-center gap-2">
-              {text.partner} <span className="text-xs opacity-60">CYBERMASSIVE</span>
+          <nav className="flex flex-col gap-4 md:gap-3 text-base md:text-sm">
+            <a href="#privacy" className="text-gray-400 hover:text-cyan-400 transition py-2">{text.privacy}</a>
+            <a href="#terms" className="text-gray-400 hover:text-cyan-400 transition py-2">{text.terms}</a>
+            <a 
+              href="https://cybermassive.tech" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-400 hover:text-cyan-400 transition inline-flex items-center gap-2 py-2"
+            >
+              {text.partner} <span className="text-xs md:text-xs opacity-60">CYBERMASSIVE</span>
             </a>
           </nav>
 
           {/* Centro – Logo + confidencialidad */}
           <div className="flex flex-col items-center gap-3">
-            <h3 className="text-2xl font-bold text-white tracking-tight">Cypherstone</h3>
-            <p className="text-sm text-gray-400 flex items-center gap-2">
-              <Lock className="w-4 h-4 text-cyan-400" />
+            <h3 className="text-2xl md:text-2xl font-bold text-white tracking-tight">Cypherstone</h3>
+            <p className="text-base md:text-sm text-gray-400 flex items-center gap-2">
+              <Lock className="w-5 h-5 md:w-4 md:h-4 text-cyan-400" />
               Confidencialidad absoluta
             </p>
           </div>
 
           {/* Derecha – Redes + email */}
-          <div className="flex flex-col items-center md:items-end gap-6">
-            <div className="flex gap-4">
+          <div className="flex flex-col items-center md:items-end gap-8 md:gap-6">
+            <div className="flex gap-6 md:gap-4">
 
-              {/* WhatsApp – estilo gris como los demás, icono OFICIAL 2025 */}
+              {/* WhatsApp */}
               <a
                 href="https://wa.me/5491138113906"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
-                className="group p-3 bg-gray-800 hover:bg-[#25D366] rounded-full border border-gray-700 hover:border-transparent transition-all duration-300"
+                className="group p-4 md:p-3 bg-gray-800 hover:bg-[#25D366] rounded-full border border-gray-700 hover:border-transparent transition-all duration-300"
               >
                 <svg
-                  className="w-5 h-5 text-gray-400 group-hover:text-white transition"
+                  className="w-7 h-7 md:w-5 md:h-5 text-gray-400 group-hover:text-white transition"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                   xmlns="http://www.w3.org/2000/svg"
@@ -74,9 +79,9 @@ export function Footer({ lang }: { lang: Language }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="group p-3 bg-gray-800 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 rounded-full border border-gray-700 hover:border-transparent transition-all duration-300"
+                className="group p-4 md:p-3 bg-gray-800 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 rounded-full border border-gray-700 hover:border-transparent transition-all duration-300"
               >
-                <Instagram className="w-5 h-5 text-gray-400 group-hover:text-white transition" />
+                <Instagram className="w-7 h-7 md:w-5 md:h-5 text-gray-400 group-hover:text-white transition" />
               </a>
 
               {/* LinkedIn */}
@@ -85,20 +90,23 @@ export function Footer({ lang }: { lang: Language }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="group p-3 bg-gray-800 hover:bg-blue-600 rounded-full border border-gray-700 hover:border-transparent transition-all duration-300"
+                className="group p-4 md:p-3 bg-gray-800 hover:bg-blue-600 rounded-full border border-gray-700 hover:border-transparent transition-all duration-300"
               >
-                <Linkedin className="w-5 h-5 text-gray-400 group-hover:text-white transition" />
+                <Linkedin className="w-7 h-7 md:w-5 md:h-5 text-gray-400 group-hover:text-white transition" />
               </a>
             </div>
 
-            <a href="mailto:info@cypherstone.com.ar" className="text-gray-300 hover:text-cyan-400 font-medium">
+            <a 
+              href="mailto:info@cypherstone.com.ar" 
+              className="text-gray-300 hover:text-cyan-400 font-medium text-lg md:text-base py-3 px-2"
+            >
               ✉ {text.email}
             </a>
           </div>
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/5 text-center">
-          <p className="text-xs md:text-sm text-gray-500">{text.copyright}</p>
+          <p className="text-base md:text-sm text-gray-500">{text.copyright}</p>
         </div>
       </div>
     </footer>
